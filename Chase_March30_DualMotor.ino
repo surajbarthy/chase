@@ -18,21 +18,42 @@ void setup(void) {
     Serial.begin(9600);
 }
 
+// void loop(void) {
+//     // Set the direction of rotation
+//     digitalWrite(dirPin1, LOW); // or LOW for opposite direction
+//     digitalWrite(dirPin2, LOW); // or LOW for opposite direction
+    
+//     // Generate steps to move the stepper motor
+//     for (int i = 0; i < 800; i++) {
+//         digitalWrite(stepPin1, HIGH);
+//         digitalWrite(stepPin2, HIGH);
+//         delay(18); // Ensure a minimum pulse width (adjust as needed)
+//         digitalWrite(stepPin1, LOW);
+//         digitalWrite(stepPin2, LOW);
+//         delay(20); // Adjust this delay for the desired rotation speed
+//     }
+    
+// // delay(1000);
+//     // Optional: Send debugging information via Serial
+//     Serial.println("Completed 360 degrees rotation in 1 minute");
+// }
+
+
 void loop(void) {
     // Set the direction of rotation
-    digitalWrite(dirPin1, LOW); // or LOW for opposite direction
-    digitalWrite(dirPin2, LOW); // or LOW for opposite direction
+    digitalWrite(dirPin1, LOW); // or LOW for one direction
+    digitalWrite(dirPin2, HIGH); // or HIGH for opposite direction
     
     // Generate steps to move the stepper motor
-    for (int i = 0; i < 800; i++) {
+    for (int i = 0; i < stepsPerRevolution; i++) {
         digitalWrite(stepPin1, HIGH);
         digitalWrite(stepPin2, HIGH);
-        delay(18); // Ensure a minimum pulse width (adjust as needed)
+        delayMicroseconds(500); // Adjust as needed for precise timing
         digitalWrite(stepPin1, LOW);
         digitalWrite(stepPin2, LOW);
-        delay(20); // Adjust this delay for the desired rotation speed
+        delayMicroseconds(stepDelay); // Adjust for desired rotation speed
     }
-// delay(1000);
+    
     // Optional: Send debugging information via Serial
     Serial.println("Completed 360 degrees rotation in 1 minute");
 }
