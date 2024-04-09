@@ -6,8 +6,15 @@ const int dirPin2 = 6;   // Inner Shaft
 
 unsigned long lastStepTime1 = 0;  // Last step time for stepper motor 1
 unsigned long lastStepTime2 = 0;  // Last step time for stepper motor 2
-const int stepDelay1 = 60 / 60;        // Delay for stepper motor 1 in milliseconds
-const int stepDelay2 = 60;   // Delay for stepper motor 2 in milliseconds
+
+// one hour
+// const float stepDelay1 = 4500 / 60;        // Delay for stepper motor 1 in milliseconds
+// const float stepDelay2 = 4500;   // Delay for stepper motor 2 in milliseconds
+
+
+//30 minutes
+const float stepDelay1 = 2250 / 60;        // Delay for stepper motor 1 in milliseconds
+const float stepDelay2 = 2250;   // Delay for stepper motor 2 in milliseconds
 
 int stepsCount2 = 0;  // Counter to track steps of stepper motor 2
 int stepsToTake1 = 0; // Number of steps stepper motor 1 needs to take
