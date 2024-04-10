@@ -1,5 +1,3 @@
-//  Document for time calculations
-
 const int stepPin1 = 2;  // Outer Shaft
 const int dirPin1 = 5;   // Outer Shaft
 
@@ -15,12 +13,16 @@ unsigned long lastStepTime2 = 0;  // Last step time for stepper motor 2
 
 
 // 30 minutes
-// const float stepDelay1 = 2250 / 60;        // Delay for stepper motor 1 in milliseconds
-// const float stepDelay2 = 2250;   // Delay for stepper motor 2 in milliseconds
+const float stepDelay1 = 2250 / 60;        // Delay for stepper motor 1 in milliseconds
+const float stepDelay2 = 2250;   // Delay for stepper motor 2 in milliseconds
+
+// reset timer
+const float resetStepDelay1 = 60 / 60;        // Delay for stepper motor 1 in milliseconds
+const float resetStepDelay2 = 60;   // Delay for stepper motor 2 in milliseconds
 
 // test
-const float stepDelay1 = 60 / 60;  // Delay for stepper motor 1 in milliseconds
-const float stepDelay2 = 20;       // Delay for stepper motor 2 in milliseconds
+// const float stepDelay1 = 60 / 60;  // Delay for stepper motor 1 in milliseconds
+// const float stepDelay2 = 60;       // Delay for stepper motor 2 in milliseconds
 
 int stepsCount2 = 0;   // Counter to track steps of stepper motor 2
 int stepsToTake1 = 0;  // Number of steps stepper motor 1 needs to take
@@ -73,7 +75,7 @@ void loop() {
             digitalWrite(stepPin2, HIGH);
             delayMicroseconds(50);  // Pulse width for stepper motor 1
             digitalWrite(stepPin2, LOW);
-            delay(stepDelay2);  // Delay for stepper motor 1
+            delay(resetStepDelay2);  // Delay for stepper motor 1
           }
           stepsCount2=0;
           flag = 1;
