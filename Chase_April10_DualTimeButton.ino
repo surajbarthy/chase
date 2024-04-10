@@ -1,3 +1,5 @@
+//  Document for time calculations
+
 const int stepPin1 = 2;  // Outer Shaft
 const int dirPin1 = 5;   // Outer Shaft
 
@@ -12,7 +14,11 @@ unsigned long lastStepTime2 = 0;  // Last step time for stepper motor 2
 // const float stepDelay2 = 4500;   // Delay for stepper motor 2 in milliseconds
 
 
-//30 minutes
+// 30 minutes
+// const float stepDelay1 = 2250 / 60;        // Delay for stepper motor 1 in milliseconds
+// const float stepDelay2 = 2250;   // Delay for stepper motor 2 in milliseconds
+
+// test
 const float stepDelay1 = 60 / 60;  // Delay for stepper motor 1 in milliseconds
 const float stepDelay2 = 20;       // Delay for stepper motor 2 in milliseconds
 
